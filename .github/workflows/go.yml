@@ -26,8 +26,8 @@ jobs:
         go mod tidy
         CGO_ENABLED=0 go build -tags netgo -o dns-acme-server ./...
     - name: Upload Go test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: dns-acme-server
-          path: dns-acme-server
+      uses: actions/upload-artifact@v4
+      with:
+        name: dns-acme-server
+        path: dns-acme-server
 
