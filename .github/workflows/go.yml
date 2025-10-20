@@ -22,5 +22,7 @@ jobs:
         go-version: '1.19'
 
     - name: Build
-      run: CGO_ENABLED=0 go build -tags netgo -o dns-acme-server ./...
+      run: |
+        go mod tidy
+        CGO_ENABLED=0 go build -tags netgo -o dns-acme-server ./...
 
